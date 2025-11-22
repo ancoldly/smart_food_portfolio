@@ -1,0 +1,457 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: #FFF7EF;
+  color: #391713;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.15);
+  border-radius: 10px;
+}
+
+
+/* ============================================= */
+/* HEADER NAV */
+/* ============================================= */
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 247, 239, 0.96);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #e1d4c5;
+  transition: box-shadow 0.2s ease;
+}
+
+.top-header.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.nav a {
+  font-size: 17px;
+  margin-left: 20px;
+  text-decoration: none;
+  color: #391713;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #386642;
+  transition: width 0.2s ease;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+/* ============================================= */
+/* PAGE WRAPPER */
+/* ============================================= */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 80px; /* chừa header */
+}
+
+/* ============================================= */
+/* SECTIONS */
+/* ============================================= */
+.section {
+  padding: 56px 40px;
+}
+
+/* HERO – GRADIENT + 4 PHONE NHẤP NHÔ */
+.section-hero {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: linear-gradient(180deg, #cde8a8 0%, #FFF7EF 55%);
+}
+
+.phones-top {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 34px;
+  margin-top: 20px;
+}
+
+.phones-top img {
+  width: 200px;
+  border-radius: 28px;
+}
+
+/* nhấp nhô giống Figma */
+.phones-top .p1 { margin-top: 40px; }
+.phones-top .p2 { margin-top: 0px;  }
+.phones-top .p3 { margin-top: 20px; }
+.phones-top .p4 { margin-top: 60px; }
+
+/* ============================================= */
+/* TYPOGRAPHY */
+/* ============================================= */
+.title-main {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.subtitle-center,
+.subtitle-left {
+  font-size: 22px;        /* trước 18–20 */
+}
+
+.subtitle-center {
+  font-weight: 600;
+  text-align: center;
+  margin: 36px 0 14px;
+}
+
+.subtitle-left {
+  font-weight: 600;
+  margin: 32px 0 16px;
+}
+
+.body-text {
+  font-size: 18px;
+  line-height: 1.75;
+  max-width: 700px;
+  color: #391713;
+}
+
+.body-text.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* BRAND MARKER 01 / 02 / 03 */
+.brand-heading {
+  margin-bottom: 32px;
+}
+
+.brand-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.brand-index {
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+
+.brand-label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.brand-line {
+  width: 60px;
+  height: 2px;
+  background: #386642;
+  border-radius: 2px;
+}
+
+/* ============================================= */
+/* ABOUT */
+/* ============================================= */
+.section-about {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+/* ============================================= */
+/* BRAND SECTION */
+/* ============================================= */
+.section-brand {
+  padding-top: 24px;
+  padding-bottom: 56px;
+}
+
+/* ============================================= */
+/* FONTS SECTION */
+/* ============================================= */
+.section-fonts {
+  background: #e3f0df;
+}
+
+.font-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.font-row.second {
+  margin-top: 24px;
+}
+
+.font-block {
+  flex: 1;
+}
+
+.font-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.font-sample {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.font-big {
+  font-size: 54px;
+}
+
+.font-small {
+  font-size: 36px;
+}
+
+.faustina {
+  font-family: "Faustina", serif;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+}
+
+.phone-preview img {
+  width: 400px;
+  border-radius: 32px;
+}
+
+/* ============================================= */
+/* COLORS */
+/* ============================================= */
+.section-colors {
+  padding-top: 72px;
+  padding-bottom: 72px;
+  text-align: center;
+  background: #FFF7EF;
+}
+
+.color-diagram {
+  position: relative;
+  width: 360px;
+  height: 200px;
+  margin: 0 auto 40px;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.circle-bg {
+  width: 160px;
+  height: 160px;
+  background: #FFF7EF;
+  border: 2px solid #e5d4c1;
+  left: 10px;
+  top: 20px;
+}
+
+.circle-page {
+  width: 130px;
+  height: 130px;
+  background: #FCAE41;
+  right: 0;
+  top: 10px;
+  color: #391713;
+}
+
+.circle-text-main {
+  width: 110px;
+  height: 110px;
+  background: #391713;
+  color: #fff;
+  right: 40px;
+  bottom: 18px;
+}
+
+.circle-text-green {
+  width: 80px;
+  height: 80px;
+  background: #386642;
+  color: #fff;
+  left: 120px;
+  bottom: 0;
+}
+
+/* ============================================= */
+/* SCREENS */
+/* ============================================= */
+.section-screens-title,
+.section-screens {
+  background: linear-gradient(180deg, #FFF7EF 0%, #ddefd2 55%, #FFF7EF 100%);
+}
+
+.section-screens-title {
+  padding-bottom: 16px;
+}
+
+.phones-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 28px;
+  text-align: center;
+}
+
+.phones-row img {
+  width: 250px;
+  border-radius: 28px;
+}
+
+/* ============================================= */
+/* GUIDELINES */
+/* ============================================= */
+.section-guidelines {
+  background: #f6e1cf;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.guide-card {
+  background: #f9efe3;
+  border-radius: 24px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.guide-card img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+}
+
+/* ============================================= */
+/* FOOTER */
+/* ============================================= */
+.footer {
+  background: #386642;
+  color: #fff;
+  text-align: center;
+  padding: 28px 16px;
+  font-size: 16px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================================= */
+/* RESPONSIVE */
+/* ============================================= */
+@media (max-width: 900px) {
+  .header-inner {
+    padding-inline: 16px;
+  }
+  .nav {
+    display: none; /* nếu cần menu mobile thì sau này làm thêm */
+  }
+
+  .section {
+    padding: 40px 20px;
+  }
+
+  .font-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .phones-top {
+    flex-wrap: wrap;
+  }
+
+  .phones-row {
+    flex-wrap: wrap;
+  }
+
+  .color-diagram {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 600px) {
+  .phones-top img,
+  .phones-row img {
+    width: 150px;
+  }
+
+  .color-diagram {
+    transform: scale(0.75);
+  }
+}
+
